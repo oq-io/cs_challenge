@@ -50,7 +50,7 @@
  
     <Loggers>
      
-        <Logger name="com.oq_io.cs_challenge" additivity="false" level="error">
+        <Logger name="com.oq_io.cs_challenge" additivity="false" level="trace">
             <AppenderRef ref="Console" />
         </Logger>
          
@@ -62,24 +62,24 @@
         </Logger>
          
                  
-        <Root level="error">
+        <Root level="warn">
             <AppenderRef ref="Console"/>
         </Root>
  
 		<Logger name="org.hibernate.SQL" level="debug" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console-Appender"/>
         </Logger>
         <Logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console-Appender"/>
         </Logger>
         <Logger name="org.hibernate.stat" level="trace" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console-Appender"/>
         </Logger>
         <Logger name="org.hibernate.SQL_SLOW" level="trace" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console-Appender"/>
         </Logger>
         <Logger name="org.hibernate.cache" level="trace" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console-Appender"/>
         </Logger>
 
 

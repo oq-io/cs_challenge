@@ -47,8 +47,9 @@ public class DbConnect {
 		
 	
 	public void Insert(Event event, Boolean hasMore) {
+		getSession();
 		//Add objects to holder for batch insertion
-		if(eventListHolder.size() < batchSize) {
+		if(eventListHolder.size() < batchSize && hasMore) {
 			eventListHolder.add(event);
 		}else if(eventListHolder.size() == batchSize || !hasMore) {
 			eventListHolder.add(event);
@@ -59,6 +60,7 @@ public class DbConnect {
 	
 	
 	public void Insert(List<Event> eventList) {
+		logger.info("CALLING");
 		Transaction transaction = getTransaction();
         try {
         	for (int i=0; i<eventList.size(); i++ ) {

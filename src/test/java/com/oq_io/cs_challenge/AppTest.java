@@ -39,12 +39,11 @@ public class AppTest
      */
     public void testJsonParse()
     {
-    	File testJson = new GenerateRandomEventLogs(100).getTempFile();
+    	File testJson = new GenerateRandomEventLogs(10).getTempFile();
     	DbConnect memDb = new DbConnect();
     	LogParser parseTest = new LogParser(testJson, memDb);
     	int rowsRead = parseTest.getStatsProcRows();
     	List<Event> rows = memDb.SelectDataObj(Event.class);
-    	
     	assertEquals( rowsRead, rows.size());
     }
     
